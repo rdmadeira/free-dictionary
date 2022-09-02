@@ -3,15 +3,18 @@
     margin: 0;
     border: 0;    
 }
-#content {
+.content {
     width: 100%;
+    height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 video {
     width: 100%;
+    
 }
 #form-ctn {
     position: absolute;
@@ -39,9 +42,55 @@ video {
     width: 35%;
     align-self: stretch;
     font-size: 1.3em;
-    padding: 0 10px;
+    padding: 0 10px 0 20px;
+    background: #ffffffc9;
+}
+#form-ctn input[type="text"]:focus {
+    background: aliceblue;
 }
 #form-ctn button {
     outline: solid black 2px;
     border-radius: 10px;
+}
+#form-ctn button:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+}
+#results {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#result-title {
+    text-align: center;
+    font-size: 3em;
+}
+.results-text {
+    font-size: 1.5em;
+    margin: 2vw 10vw;
+    text-indent: 20px;
+}
+#results > iframe {
+    margin: 0vw auto 2vw;
+}
+.reduced-content {
+    width: 100%;
+    height: 35vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+}
+.btn-cerrar {
+    position: absolute;
+    top: 2vw;
+    right: 2vw;
+    border: 1px solid black;
+    padding: 2vw;
+    font-size: 1.5em;
+}
+.btn-cerrar:hover {
+    cursor: pointer;
+    background-color: aliceblue;
 }
