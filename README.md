@@ -1,6 +1,6 @@
 # Online Free English Dictionary
 
-<img src="./assets/capture.png" >
+[![Ejemplo](./assets/Captura.PNG)](./assets/FreeDictionaryReadMe.mp4)
 
 Sitio web con el objetivo de obtener el resultado de significados en el idioma inglés.
 

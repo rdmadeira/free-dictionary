@@ -27,7 +27,6 @@ function getDataAndShow(e) {
         const reducedData = obj[0];
         console.log(reducedData);
         
-        location.href = '#result-title';
         resultTitle.innerText = reducedData.word;
         setTimeout( ()=> createParrafosAndContent(), 500 );
         reducedData.meanings[0].definitions.splice(2);
@@ -53,12 +52,14 @@ function getDataAndShow(e) {
             newClose.classList.add('btn-cerrar');
             newClose.innerText = 'Clear';
             resultTitle.insertAdjacentElement('afterend', newClose);
-            newClose.addEventListener('click', () => initForm(), {once: true});
+            newClose.addEventListener('click', () => initForm());
+            setTimeout(()=> resultTitle.scrollIntoView({behavior:"smooth"}), 500);
         }
         function reduceForm() {
             const contentDiv = document.getElementById('content');
             contentDiv.setAttribute('class', 'reduced-content');
         }
+        // location.href = '#result-title';
     }
     function showError(mens) {
         resultTitle.innerText = mens+' - Word was not found';
@@ -74,7 +75,8 @@ function initForm() {
         document.querySelector('#results p') && divResults.removeChild(document.querySelector('#results p'));
         document.querySelector('#results span') && divResults.removeChild(document.querySelector('#results span'));
     });
-    contentDiv.setAttribute('id', 'content');
+    contentDiv.setAttribute('class', 'content');
     resultTitle.innerText = '';
     iframeEl.setAttribute('src', '');
+    window.scroll({top: 0, left: 0, behavior: "smooth"}); 
 }
